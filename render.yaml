@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: love-and-co-backend
+    env: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: SHIPROCKET_EMAIL
+        sync: false
+      - key: SHIPROCKET_PASSWORD
+        sync: false
+      - key: SHIPROCKET_PICKUP_LOCATION
+        value: Primary
+      - key: SHIPROCKET_WEBHOOK_TOKEN
+        value: loveandco_kalyan_2026
+      - key: GOOGLE_CLIENT_ID
+        value: 909188430255-0mn97r3icacsjd2l2vij3pc9otktm2c1.apps.googleusercontent.com
